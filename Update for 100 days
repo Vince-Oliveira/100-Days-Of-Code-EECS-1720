@@ -1,0 +1,4 @@
+Jan - 20th - 2022: Continued working on the code for the chrome extension and learning simple things like highlighting paragraphs different colors on all urls by using --> 
+let paragraphs = document.getElementsByTagName('p');
+for (elt of paragraphs) {
+  elt.style['background-color'] = '#FF00FF';
