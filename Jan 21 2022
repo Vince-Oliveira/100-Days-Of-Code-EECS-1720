@@ -1,0 +1,18 @@
+Today I kept working on the code for the browser extension. I made a button .png for it and also made a background script that runs behind the content script.
+
+Code for image and background script being enabled:
+  "background":   {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "ape.png"
+  }
+  
+  Code for Background script
+  console.log('background running');
+
+chrome.browserAction.onClicked.addListener(buttonClicked);
+
+function buttonClicked(tab) {
+  console.log(tab);
+}
