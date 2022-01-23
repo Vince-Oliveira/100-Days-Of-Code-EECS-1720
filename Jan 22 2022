@@ -1,0 +1,40 @@
+Today I made an extension that made every image on google chrome replaced with an image of a narwall. 
+
+{
+"manifest_version": 2,
+"name": "For Narwalls",
+"version": "0.1",
+"web_accessible_resources": [
+  "Narwalls/*.jpg"
+],
+"content_scripts": [{
+  "matches": [
+    "<all_urls>"
+  ],
+  "js": ["narwall.js"]
+}]
+
+
+}
+
+
+console.log('Narwalls of the world, unite!');
+
+let filenames = [
+  "Narwall1.jpg",
+  "Narwall2.jpg",
+  "Narwall3.jpg",
+  "Narwall4.jpg",
+  "Narwall5.jpg"
+];
+
+let imgs = document.getElementsByTagName('img');
+
+for (imgElt of imgs) {
+  let r = Math.floor(Math.random() * filenames.length);
+  let file = 'Narwalls/' + filenames[r];
+  let url = chrome.extension.getURL(file);
+    imgElt.src = url;
+console.log(url);
+}
+
