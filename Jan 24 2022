@@ -1,0 +1,11 @@
+Today I learned how to change images shown on google chrome with a specific .jpg source to an image folder that I create. 
+
+et imgs = document.getElementsByTagName('img');
+
+for (imgElt of imgs) {
+  let r = Math.floor(Math.random() * filenames.length);
+  let file = 'Narwalls/' + filenames[r];
+  let url = chrome.extension.getURL(file);
+    imgElt.src = url;
+console.log(url);
+}
