@@ -1,0 +1,12 @@
+Today I kept working on my chrome extension and I tried to figure out how to make it so when I click the button, that the background script would acknowledge everything on that current URL
+
+console.log('background running');
+
+chrome.browserAction.onClicked.addListener(buttonClicked);
+
+function buttonClicked(tab) {
+  let msg = {
+    txt: "hello"
+  }
+  chrome.tabs.sendMessage(tab.id, msg);
+}
